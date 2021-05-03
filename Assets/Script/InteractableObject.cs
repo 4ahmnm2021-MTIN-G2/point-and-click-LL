@@ -2,25 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
 
 public class InteractableObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
+      public UnityEvent clicked;
     void OnMouseDown()
     { 
-        this.gameObject.active = false;
+           clicked.Invoke();    
         GameObject.Find("ObjectName").GetComponent<Text>().text = this.gameObject.name;
         Debug.Log("click");
     }
+
 
 
     
